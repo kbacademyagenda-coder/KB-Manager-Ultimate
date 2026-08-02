@@ -1,1 +1,1 @@
-// KB Manager Ultimate
+alert("KB Manager Ultimate iniciado correctamente");
