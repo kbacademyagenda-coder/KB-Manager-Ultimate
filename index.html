@@ -1,67 +1,352 @@
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KB Manager Ultimate</title>
 
-<link rel="stylesheet" href="style.css">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>
+
+KB Manager Ultimate
+
+</title>
+
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
 <body>
 
-<header>
-<h1>KB Manager Ultimate</h1>
-<p>KB Academy by Kikuzan Barea</p>
+<header class="encabezado">
+
+<div class="logo">
+
+💖
+
+</div>
+
+<h1>
+
+KB Manager Ultimate
+
+</h1>
+
+<p>
+
+KB Academy by Kikuzan Barea
+
+</p>
+
 </header>
 
-<div class="container">
+<main class="contenedor">
 
-<div class="card">
-<h2>📅 Agenda</h2>
-<p>Crear, editar y consultar citas.</p>
-<a class="btn" href="#">Entrar</a>
-</div>
+<section class="tarjeta">
 
-<div class="card">
-<h2>👥 Clientas</h2>
-<p>Historial completo de tus clientas.</p>
-<a class="btn" href="#">Entrar</a>
-</div>
+<h2>
 
-<div class="card">
-<h2>🧮 Calculadora</h2>
-<p>Cotización automática de servicios.</p>
-<a class="btn" href="#">Entrar</a>
-</div>
+📅 Agenda
 
-<div class="card">
-<h2>🎁 Fidelidad</h2>
-<p>Control de visitas y premios.</p>
-<a class="btn" href="#">Entrar</a>
-</div>
+</h2>
 
-<div class="card">
-<h2>🎓 Cursos</h2>
-<p>Información para alumnas.</p>
-<a class="btn" href="#">Entrar</a>
-</div>
+<p>
 
-<div class="card">
-<h2>🎉 Promociones</h2>
-<p>Promociones activas.</p>
-<a class="btn" href="#">Entrar</a>
-</div>
+Administra todas tus citas.
 
-</div>
+</p>
 
-<footer>
+<button
+class="boton"
+id="btnAgenda">
+
+Entrar
+
+</button>
+
+</section>
+
+<section class="tarjeta">
+
+<h2>
+
+👩 Clientas
+
+</h2>
+
+<p>
+
+Historial de servicios.
+
+</p>
+
+<button
+class="boton">
+
+Próximamente
+
+</button>
+
+</section>
+
+<section class="tarjeta">
+
+<h2>
+
+🧮 Calculadora
+
+</h2>
+
+<p>
+
+Calcula servicios automáticamente.
+
+</p>
+
+<button
+class="boton">
+
+Próximamente
+
+</button>
+
+</section>
+<section class="tarjeta">
+
+<h2>
+
+🎁 Fidelidad
+
+</h2>
+
+<p>
+
+Control de visitas y recompensas.
+
+</p>
+
+<button
+class="boton">
+
+Próximamente
+
+</button>
+
+</section>
+
+<section class="tarjeta">
+
+<h2>
+
+🎓 Cursos
+
+</h2>
+
+<p>
+
+Administración de cursos.
+
+</p>
+
+<button
+class="boton">
+
+Próximamente
+
+</button>
+
+</section>
+
+<section class="tarjeta">
+
+<h2>
+
+🎉 Promociones
+
+</h2>
+
+<p>
+
+Promociones activas.
+
+</p>
+
+<button
+class="boton">
+
+Próximamente
+
+</button>
+
+</section>
+
+<section class="tarjeta">
+
+<h2>
+
+⚙️ Configuración
+
+</h2>
+
+<p>
+
+Horarios, precios y ajustes.
+
+</p>
+
+<button
+class="boton">
+
+Próximamente
+
+</button>
+
+</section>
+
+</main>
+
+<footer class="pie">
+
+<p>
+
 KB Manager Ultimate © 2026
+
+</p>
+
 </footer>
+<!-- Pantalla Agenda -->
+
+<section
+id="pantallaAgenda"
+style="display:none;">
+
+<header class="encabezado">
+
+<h1>
+
+📅 Agenda
+
+</h1>
+
+<p>
+
+Administración de citas
+
+</p>
+
+</header>
+
+<div class="contenedor">
+
+<section class="tarjeta">
+
+<h2>
+
+➕ Nueva cita
+
+</h2>
+
+<form id="formCita">
+
+<input
+type="text"
+id="nombre"
+placeholder="Nombre de la clienta"
+required>
+
+<input
+type="tel"
+id="telefono"
+placeholder="Teléfono"
+required>
+
+<input
+type="date"
+id="fecha"
+required>
+
+<label>
+
+Horario
+
+</label>
+
+<select
+id="hora"
+required>
+
+<option value="">
+Selecciona un horario
+</option>
+
+</select>
+
+<p class="horarioExtra">
+
+🌙 Horario nocturno
+<strong>$100 extra</strong>
+
+</p>
+
+<input
+type="text"
+id="servicio"
+placeholder="Servicio"
+required>
+
+<button
+type="submit"
+class="boton">
+
+Guardar cita
+
+</button>
+
+</form>
+
+</section>
+<section class="tarjeta">
+
+<h2>
+
+📋 Citas del día
+
+</h2>
+
+<div id="listaCitas">
+
+<p>
+
+Aún no hay citas registradas.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="tarjeta">
+
+<button
+class="boton"
+id="btnVolverInicio">
+
+⬅ Volver al inicio
+
+</button>
+
+</section>
+
+</div>
+
+</section>
 
 <script src="app.js"></script>
 
 </body>
+
 </html>
