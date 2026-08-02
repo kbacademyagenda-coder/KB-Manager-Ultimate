@@ -1,36 +1,78 @@
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+const botones=document.querySelectorAll(".btn");
 
-  const botonAgenda = document.querySelectorAll(".btn")[0];
+botones[0].onclick=function(e){
 
-  botonAgenda.addEventListener("click", (e) => {
-    e.preventDefault();
+e.preventDefault();
 
-    document.body.innerHTML = `
-      <header>
-        <h1>📅 Agenda KB Academy</h1>
-        <p>Administración de citas</p>
-      </header>
+document.body.innerHTML=`
 
-      <div class="container">
+<header>
 
-        <div class="card">
-          <h2>➕ Nueva cita</h2>
-          <a class="btn" href="#">Entrar</a>
-        </div>
+<h1>📅 Agenda KB Academy</h1>
 
-        <div class="card">
-          <h2>📋 Citas del día</h2>
-          <a class="btn" href="#">Entrar</a>
-        </div>
+<p>Administración de citas</p>
 
-        <div class="card">
-          <h2>📆 Calendario</h2>
-          <a class="btn" href="#">Entrar</a>
-        </div>
+</header>
 
-            </div>
-    `;
-  });
+<div class="container">
+
+<div class="card">
+
+<h2>➕ Nueva cita</h2>
+
+<input
+type="text"
+placeholder="Nombre de la clienta"
+style="width:100%;padding:15px;border-radius:12px;margin-bottom:10px;">
+
+<input
+type="text"
+placeholder="Teléfono"
+style="width:100%;padding:15px;border-radius:12px;margin-bottom:10px;">
+
+<input
+type="date"
+style="width:100%;padding:15px;border-radius:12px;margin-bottom:10px;">
+
+<input
+type="time"
+style="width:100%;padding:15px;border-radius:12px;margin-bottom:10px;">
+
+<input
+type="text"
+placeholder="Servicio"
+style="width:100%;padding:15px;border-radius:12px;margin-bottom:10px;">
+
+<button class="btn">
+
+Guardar cita
+
+</button>
+
+</div>
+
+<div class="card">
+
+<button class="btn" id="volver">
+
+⬅ Volver al inicio
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+document.getElementById("volver").onclick=function(){
+
+location.reload();
+
+}
+
+}
 
 });
