@@ -1,11 +1,35 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    const botones = document.querySelectorAll(".btn");
+  const botonAgenda = document.querySelectorAll(".btn")[0];
 
-    botones[0].addEventListener("click", (e) => {
-        e.preventDefault();
-        alert("Bienvenida a tu Agenda KB Academy 💕");
-    });
+  botonAgenda.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    document.body.innerHTML = `
+      <header>
+        <h1>📅 Agenda KB Academy</h1>
+        <p>Administración de citas</p>
+      </header>
+
+      <div class="container">
+
+        <div class="card">
+          <h2>➕ Nueva cita</h2>
+          <a class="btn" href="#">Entrar</a>
+        </div>
+
+        <div class="card">
+          <h2>📋 Citas del día</h2>
+          <a class="btn" href="#">Entrar</a>
+        </div>
+
+        <div class="card">
+          <h2>📆 Calendario</h2>
+          <a class="btn" href="#">Entrar</a>
+        </div>
+
+      </div>
+    `;
+  });
 
 });
