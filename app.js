@@ -1,83 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
 
-const botones=document.querySelectorAll(".btn");
+const formulario = document.getElementById("form-cita");
 
-botones[0].onclick=function(e){
+if (formulario) {
+  formulario.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-e.preventDefault();
+    const cita = {
+      nombre: document.getElementById("nombre").value,
+      telefono: document.getElementById("telefono").value,
+      fecha: document.getElementById("fecha").value,
+      hora: document.getElementById("hora").value,
+      servicio: document.getElementById("servicio").value
+    };
 
-document.body.innerHTML=`
+    let citas = JSON.parse(localStorage.getItem("citas")) || [];
 
-<header>
+    citas.push(cita);
 
-<h1>📅 Agenda KB Academy</h1>
+    localStorage.setItem("citas", JSON.stringify(citas));
 
-<p>Administración de citas</p>
+    alert("✅ Cita guardada correctamente");
 
-</header>
-
-<div class="container">
-
-<div class="card">
-
-<h2>➕ Nueva cita</h2>
-
-<input
-type="text"
-placeholder="Nombre de la clienta"
-style="width:100%;padding:15px;border-radius:12px;margin-bottom:10px;">
-
-<input
-type="text"
-placeholder="Teléfono"
-style="width:100%;padding:15px;border-radius:12px;margin-bottom:10px;">
-
-<input
-type="date"
-style="width:100%;padding:15px;border-radius:12px;margin-bottom:10px;">
-
-<input
-type="time"
-style="width:100%;padding:15px;border-radius:12px;margin-bottom:10px;">
-
-<input
-type="text"
-placeholder="Servicio"
-style="width:100%;padding:15px;border-radius:12px;margin-bottom:10px;">
-
-<button class="btn">
-
-Guardar cita
-
-</button>
-
-</div>
-
-<div class="card">
-
-<button class="btn" id="volver">
-
-⬅ Volver al inicio
-
-</button>
-
-</div>
-
-</div>
-
-`;
-
-document.getElementById("volver").onclick=function(){
-
-location.reload();
-  }
-
+    formulario.reset();
+  });
 }
-
-});
-
-}
-
-}
-
-});
