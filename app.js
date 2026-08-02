@@ -70,6 +70,11 @@ Guardar cita
 document.getElementById("volver").onclick=function(){
 
 location.reload();
+  }
+
+}
+
+});
 
 }
 
