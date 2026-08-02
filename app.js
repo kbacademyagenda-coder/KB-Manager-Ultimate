@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <a class="btn" href="#">Entrar</a>
         </div>
 
-      </div>
+            </div>
     `;
   });
 
